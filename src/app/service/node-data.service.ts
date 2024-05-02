@@ -12,4 +12,8 @@ export class NodeDataService {
   getData(){
     return this.http.get<any>('https://arduinorabbit.onrender.com/arduinoArr')
   }
+
+  sendEmail(data:any){
+    return this.http.post<any>('https://arduinorabbit.onrender.com/send-email', data)
+  }
 }

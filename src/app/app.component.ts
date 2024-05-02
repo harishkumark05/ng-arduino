@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SocketService } from './service/socket.service';
 import { single, multi } from './data';
+import {AuthService} from './auth/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,7 +15,7 @@ export class AppComponent {
     this.sidebarOpen = !this.sidebarOpen;
   }
 
-  constructor() { }
+  constructor(private auth:AuthService) { }
 
   
   ngOnInit(): void {
@@ -27,8 +28,11 @@ export class AppComponent {
   // sendMessage(): void {
   //   const data = 'Hello from Angular!';
   //   this.socketService.emit('customEvent', data);
-  // }
+  // }  
   toggleDropdown1(){
 this.dropDown1 = ! this.dropDown1
+  }
+  logout(){
+    this.auth.logout()
   }
 }

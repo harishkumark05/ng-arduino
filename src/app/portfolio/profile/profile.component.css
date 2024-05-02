@@ -87,3 +87,38 @@ section {
   overflow: hidden;
 }
 /**/
+.custom-shape-divider-top-1713459113 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1713459113 svg {
+    position: relative;
+    display: block;
+    width: calc(264% + 1.3px);
+    height: 109px;
+}
+
+.custom-shape-divider-top-1713459113 .shape-fill {
+    fill: #31644717;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .custom-shape-divider-top-1713459113 svg {
+        width: calc(201% + 1.3px);
+        height: 109px;
+    }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-top-1713459113 svg {
+        width: calc(115% + 1.3px);
+        height: 55px;
+    }
+}

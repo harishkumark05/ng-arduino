@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
@@ -41,7 +42,6 @@ import { MainComponent } from './portfolio/main/main.component';
   ],
   imports: [
     BrowserModule,
-    FlexLayoutModule,
     AppRoutingModule,
     NgxChartsModule,
     HttpClientModule,FormsModule,ReactiveFormsModule

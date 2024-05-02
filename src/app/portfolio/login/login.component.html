@@ -1,0 +1,48 @@
+<!-- <div>
+  <h2>Login</h2>
+  <form (submit)="onSubmit()">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required>
+    </div>
+    <div>
+      <label for="pin">PIN:</label>
+      <input type="password" id="pin" [(ngModel)]="pin" name="pin" required>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</div>
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div> -->
+
+<div class="container">
+
+  <div class="row justify-content-center align-items-center " style="height: 75vh;">
+    <div class="col-md-6">
+      <h1 class="text-center mb-4">Login</h1>
+      <form (submit)="onSubmit()">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="email" class="form-control" id="username" [(ngModel)]="username" name="username" autocomplete="username" required>
+        </div>
+        <div class="mb-3">
+          <label for="pin" class="form-label">Pin</label>
+          <input type="password" class="form-control" id="pin" [(ngModel)]="pin" name="pin" autocomplete="pin" required>
+        </div>
+        <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary ">Submit</button>
+      </div>
+      </form>
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div> 
+        <div *ngIf="loading" class="text-center mt-4">
+        <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+        <p class="text-muted mt-2">This might take some time as it's a free hosting service. Thank you for your patience.</p>
+      </div>
+    </div>
+  </div>
+</div>

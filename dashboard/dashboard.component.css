@@ -5,6 +5,7 @@
 }
 .home-dashboard-card-body{
     padding:2rem;
+    background-color: #fff;
 }
 .text-red {
         color: #d63384!important;
@@ -15,9 +16,7 @@
 .home-dashboard-card-footer{
     padding: 2rem;
 }
-.container{
-        height: 100vh;
-}
+
 .icon-color-not-dynamic{
         color: #198754;
 }

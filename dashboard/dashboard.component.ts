@@ -72,7 +72,7 @@ subscribeToSocket(){
       case 'temperature':
         if(value <20){
           return "bg-info"
-        }else if(value <=25){
+        }else if(value <=33){
            return "bg-warning"
          }else{
            return "bg-danger"

@@ -1,5 +1,8 @@
-<div class="container bg-light">
-                <h3 class="p-4 text-center ">Dashboard</h3>
+<section class="container-fluid">
+                <!-- <h3 class="p-2 text-center ">Dashboard</h3> -->
+            <div class="section-title">
+               <h2>Dashboard</h2>   
+              </div>
               <div *ngIf="isLoading" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
   <!-- Bootstrap spinner -->
   <div class="spinner-border icon-color-not-dynamic" role="status">
@@ -10,7 +13,7 @@
  <div *ngIf="!isLoading">
             <div class="row">
             <div class="mb-4 col-lg-3 col-sm-6 col-md-4 " *ngFor="let item of data | keyvalue">
-              <div class="h-100 home-dashboard-card-container" [routerLink]="['/', item.key]">
+              <div class="h-100 home-dashboard-card-container" [routerLink]="['/','project', item.key]">
                 <div class="d-flex align-items-center justify-content-between  home-dashboard-card-body">
                   <div>
                    <h4 class="fw-normal text-red">{{item.value}}</h4>
@@ -30,10 +33,12 @@
                 </div>
               </div>
             </div>
-
+        </div>
+        <div>
+          <router-outlet></router-outlet>
         </div>
  </div>
-</div>
+</section>
 <!-- <div class="d-flex justify-content-center">
   
     <a routerLink="/arduino" class="btn btn-primary">Dashboard Graph Representation</a>

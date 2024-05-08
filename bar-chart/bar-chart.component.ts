@@ -33,10 +33,21 @@ export class BarChartComponent implements OnDestroy {
     //   this.routeParams = param.get('id') || '';
     //   this.updateData();
     // });
-    this.routeParams = this.route.snapshot.url[0].path;
-    if(this.routeParams !== ''){
-      this.updateData();
-    }
+    this.route.paramMap.subscribe((paramMap) => {
+      const paramId = paramMap.get('id');
+      if (paramId) {
+        this.routeParams = paramId;
+        this.updateData(); // Refresh data based on the new parameter
+      } else {
+        console.error('Route parameter "id" is undefined');
+      }
+    });
+    
+    // this.routeParams = this.route.snapshot.url[1].path;
+    // console.log(this.routeParams)
+    // if(this.routeParams !== ''){
+    //   this.updateData();
+    // }
   }
 
   ngOnDestroy() {
@@ -175,34 +186,34 @@ export class BarChartComponent implements OnDestroy {
       case 'temperature':
         value = arr.temperature
         if(value <20){
-          return "bg-chat-info"
+          return "bg-info"
         }else if(value <=25){
-           return "bg-chat-warning"
+           return "bg-warning"
          }else{
-           return "bg-chat-danger"
+           return "bg-danger"
         }
       case 'smoke':
         value = parseFloat(arr.smoke)
         if(value <65){
-          return "bg-chat-info"
+          return "bg-info"
         }else {
-          return "bg-chat-danger"
+          return "bg-danger"
         }
       case 'gas':
         value = parseFloat(arr.gas)
         if(value < 70){
-          return "bg-chat-info"
+          return "bg-info"
         }else if (value <=350){
-          return "bg-chat-warning"
+          return "bg-warning"
         }else{
-          return "bg-chat-danger"
+          return "bg-danger"
         }
       case 'motion':
         value = arr.motion
         if(value == 0){
-          return "bg-chat-info"
+          return "bg-info"
         }else{
-          return "bg-chat-danger"
+          return "bg-danger"
         }
       default:
         return ""

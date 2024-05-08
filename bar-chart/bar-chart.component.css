@@ -19,7 +19,8 @@
 .chat-card-container {
   border-radius: 10px;
   height: 100%;
-border: 1px solid var(--light);
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .row {
@@ -40,7 +41,11 @@ border: 1px solid var(--light);
 }
 .card-side{
     text-align: center;
-     color: green; /* Change icon color */
+     color: var(--bs-tertiary-bg);; /* Change icon color */
   font-size: 24px;
 
 } 
+.chart-style{
+    width: 60vw;
+    margin: auto;
+}
